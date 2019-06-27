@@ -43,6 +43,7 @@ function Thermostat() {
   };
 
   this.reset = function() {
+    this.temp = DEFAULTTEMP;
     return DEFAULTTEMP;
   }
 
