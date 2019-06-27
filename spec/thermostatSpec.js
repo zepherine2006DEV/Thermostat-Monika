@@ -58,5 +58,25 @@ describe("Thermostat", function() {
 
   it("has a reset function which brings the temperature back to 20 degrees", function() {
     expect(thermostat.reset()).toEqual(20);
-  })
+  });
+
+  it("will return low usage if temperature is below 18 degrees", function() {
+    thermostat.down();
+    thermostat.down();
+    thermostat.down();
+    expect(thermostat.energyUsage()).toBe("low-usage");
+  });
+
+  it("will return medium usage if temperature is below 25 degrees", function() {
+    expect(thermostat.energyUsage()).toBe("medium-usage");
+  });
+
+  it("will return high usage if temperature is at or above 25 degrees", function() {
+    var i;
+    for(i = 20; i < 26; i++) {
+      thermostat.up()
+    }
+    expect(thermostat.energyUsage()).toBe("high-usage");
+  });
+
 });
