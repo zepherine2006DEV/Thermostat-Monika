@@ -55,4 +55,8 @@ describe("Thermostat", function() {
     expect(thermostat.up()).toEqual(32);
 
   });
+
+  it("has a reset function which brings the temperature back to 20 degrees", function() {
+    expect(thermostat.reset()).toEqual(20);
+  })
 });

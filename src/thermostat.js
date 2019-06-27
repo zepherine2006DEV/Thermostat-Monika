@@ -18,7 +18,7 @@ function Thermostat() {
     } else if (this.temp < MAXTEMPONPOWERSAVINGOFF && this.savingSwitch===false) {
         this.temp ++;
       }
-    
+
     return this.temp;
   };
 
@@ -42,6 +42,9 @@ function Thermostat() {
     this.savingSwitch = false
   };
 
+  this.reset = function() {
+    return DEFAULTTEMP;
+  }
 
 };
 
